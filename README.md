@@ -1,11 +1,12 @@
 ## beeep
-[![TravisCI Build Status](https://travis-ci.org/gen2brain/beeep.svg?branch=master)](https://travis-ci.org/gen2brain/beeep) 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/4u7avrhsdxua2c9b?svg=true)](https://ci.appveyor.com/project/gen2brain/beeep)
-[![GoDoc](https://godoc.org/github.com/gen2brain/beeep?status.svg)](https://godoc.org/github.com/gen2brain/beeep) 
-[![Go Report Card](https://goreportcard.com/badge/github.com/gen2brain/beeep?branch=master)](https://goreportcard.com/report/github.com/gen2brain/beeep) 
-<!--[![Go Cover](http://gocover.io/_badge/github.com/gen2brain/beeep)](http://gocover.io/github.com/gen2brain/beeep)-->
+[![GoDoc](https://godoc.org/github.com/unbyte/beeep?status.svg)](https://godoc.org/github.com/unbyte/beeep) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/unbyte/beeep?branch=master)](https://goreportcard.com/report/github.com/unbyte/beeep) 
 
 `beeep` provides a cross-platform library for sending desktop notifications, alerts and beeps.
+
+> It's a fork form [https://github.com/gen2brain/beeep](https://github.com/gen2brain/beeep)
+>
+> This fork makes it possible to control App name (App id) on Windows. (It's default to `Powershell`)
 
 ### Installation
 
@@ -34,6 +35,10 @@ if err != nil {
 }
 ```
 
+To change App name on Windows
+```go
+beeep.AppID = "your app id"
+```
 
 ## macOS
 

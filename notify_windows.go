@@ -17,7 +17,6 @@ import (
 )
 
 var isWindows10 bool
-var applicationID string
 
 func init() {
 	k, err := registry.OpenKey(registry.LOCAL_MACHINE, `SOFTWARE\Microsoft\Windows NT\CurrentVersion`, registry.QUERY_VALUE)
@@ -34,7 +33,7 @@ func init() {
 	isWindows10 = maj == 10
 
 	if isWindows10 {
-		applicationID = appID()
+		AppID = appID()
 	}
 }
 
@@ -93,7 +92,7 @@ func toastNotify(title, message, appIcon string) error {
 
 func toastNotification(title, message, appIcon string) toast.Notification {
 	return toast.Notification{
-		AppID:   applicationID,
+		AppID:   AppID,
 		Title:   title,
 		Message: message,
 		Icon:    appIcon,
